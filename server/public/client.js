@@ -13,6 +13,7 @@ function getPlayerData() {
         type: 'GET',
         url: '/players'
     }).then(function (response) {
+       $('#playerTableBody').empty();
         // append data to the DOM
         for (let i = 0; i < response.length; i++) {
             let player = response[i];
@@ -26,6 +27,21 @@ function getPlayerData() {
         }
     });
 }
+
+// function appendPlayerData(response) {
+//     $('#playerTableBody').empty();
+//     // append data to the DOM
+//     for (let i = 0; i < response.length; i++) {
+//         let player = response[i];
+//         $('#playerTableBody').append(`
+//             <tr>
+//                 <td>${player.firstName}</td>
+//                 <td>${player.lastName}</td>
+//                 <td>${player.born}</td>
+//             </tr>
+//         `);
+//     }
+// }
 
 function postPlayerData() {
     $.ajax({
@@ -42,13 +58,12 @@ function postPlayerData() {
 function handlePostSuccess() {
     // $('input').val('');
     // console.log($('#playerTableData').val());
-    $('#playerTableData').val('');
+   // $('#playerTableData').empty('');
     getPlayerData();
 }
 
 function postError() {
     alert('oops!!!');
-    
 }
 
 // get tournament data from the server

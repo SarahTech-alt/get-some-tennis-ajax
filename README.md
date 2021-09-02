@@ -15,6 +15,7 @@ Install [Postman](https://www.getpostman.com/downloads/), if you haven't already
 
 ## Stretch
 
+
 - Our `.then` is getting cluttered. Let's move the appending looping code into their own functions
 - The `server.js` file is getting a little crowded. Move arrays into a `modules` folder inside of your `server` folder (names like `player.js` and `tournament.js` would be good).
 - The `/player` and `/tournament` requests are working! Add a third array for `/winner` that has the `firstName` and `lastName` of the player, as well as the `tournamentName` for the tournament.
